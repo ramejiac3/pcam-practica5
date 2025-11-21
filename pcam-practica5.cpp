@@ -18,19 +18,19 @@ for (int i = 0; i < N - P_LEN; ++i) {
 seq[i] = "ATGC"[rand() % 4];
 }
 
-```
+
 // Insertar el patrón cerca del final para asegurar hallazgo
 for (int i = 0; i < P_LEN; ++i) {
     seq[N - 10000 + i] = PATTERN[i];
 }
-```
+
 
 }
 
 // Ejecuta búsqueda con configuración indicada
 void run_search(int num_threads, const char* schedule_type, int chunk_size) {
 
-```
+
 vector<char> dna_sequence(N);
 generate_sequence(dna_sequence);
 
@@ -145,13 +145,13 @@ cout << "Hilos: " << num_threads
      << " (" << chunk_size << ")"
      << ", Tiempo: " << elapsed.count() << " s"
      << ", Posición: " << first_index << endl;
-```
+
 
 }
 
 int main() {
 
-```
+
 cout << "--- Busqueda de Patron en ADN (" << PATTERN << ") ---" << endl;
 
 // Ejecutar pruebas con diferentes schedules
@@ -161,6 +161,6 @@ run_search(4, "guided", 1000);
 run_search(4, "auto", 1000);
 
 return 0;
-```
+
 
 }
